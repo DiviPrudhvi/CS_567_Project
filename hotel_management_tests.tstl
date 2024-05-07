@@ -1,0 +1,20 @@
+# hotel_management_tests.tstl
+
+# This .tstl file defines test cases to be executed using TSTL.
+# It includes basic tests for the Hotel class.
+
+# Include the necessary modules
+include "hotel_management_bug.py"
+
+# Test check-in functionality
+hotel = Hotel("Test Hotel", {101: "Alice", 102: "Bob"})
+hotel.check_in("Charlie", 103)
+hotel.check_in("Dave", 101)
+
+# Test check-out functionality
+hotel.check_out(101)
+hotel.check_out(103)
+
+# Introduce a bug: incorrect method call for displaying rooms
+print("Current Rooms:", hotel.display_rooms())  # Bug: Incorrect method call
+
